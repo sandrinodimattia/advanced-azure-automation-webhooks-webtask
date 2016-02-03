@@ -70,7 +70,7 @@ wt create task.js \
 Once the Webtask has been deployed, you can call it using curl/Postman/...:
 
 ```
-curl https://webtask.it.auth0.com/api/run/YOUR_CONTAINER/some-random-name-that-is-hard-to-guess?a=b\&c=d\&foo=bar
+curl https://webtask.it.auth0.com/api/run/YOUR_CONTAINER/some-random-name-that-is-hard-to-guess?RUNBOOK_NAME=Sample-Runbook\&a=b\&c=d\&foo=bar
 ```
 
 At the same time, you can use `wt logs` to see the Webtask running in real time:

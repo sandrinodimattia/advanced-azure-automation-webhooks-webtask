@@ -74,8 +74,7 @@ module.exports = (ctx, done) => {
   
   const internalSettings = {
     resourceGroup: "lab",
-    automationAccount: "automation-lab",
-    runbook: ctx.data.RUNBOOK_NAME
+    automationAccount: "automation-lab"
   };
 
   authenticate(ctx.data.AD_TENANT_ID, ctx.data.AD_CLIENT_ID, ctx.data.AD_SERVICE_PRINCIPAL_PASSWORD, (err, accessToken) => {
@@ -95,7 +94,7 @@ module.exports = (ctx, done) => {
     const req = {
       properties: {
         runbook: {
-           name: internalSettings.runbook
+           name: ctx.query.RUNBOOK_NAME
         },
         parameters: {
            context: JSON.stringify(parameters),
